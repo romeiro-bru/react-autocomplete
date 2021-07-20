@@ -1,0 +1,52 @@
+.auto-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14rem;
+}
+
+input {
+  background: transparent;
+  width: 15rem;
+  padding: 8px 5px;
+  margin: 0.4rem 0.5rem;
+  border-radius: 8px;
+  border: 2px solid #f1c95c;
+  color: white;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.autocomplete-container {
+  position: absolute;
+  border: 1.3px solid #f1c95c;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-color: transparent;
+  color: rgb(228, 224, 224);
+  right: 10px;
+  top: 52px;
+  width: 15.4rem;
+  font-weight: lighter;
+  background: #160f24;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px;
+}
+
+.option,
+span {
+  text-transform: capitalize;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
