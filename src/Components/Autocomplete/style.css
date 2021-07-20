@@ -49,3 +49,9 @@ input {
 span {
   text-transform: capitalize;
 }
+
+.options:hover {
+  background: #f1c95c;
+  color: #160f24;
+  cursor: pointer;
+}
