@@ -25,23 +25,34 @@ export function Autocomplete() {
     setShowSuggestions(!showSuggestions);
   };
 
+  const updateInput = (name) => {
+    setSearch(name);
+    setShowSuggestions(false);
+  };
+
   return (
     <div className="inline-flex pos-rel">
       <input
         onChange={handleInputChange}
         onClick={handleSuggestions}
-        name="name"
+        value={search}
         placeholder=" Type to search"
       />
       {showSuggestions && (
         <div className="autocomplete-container">
-          {options.map((item, index) => {
-            return (
-              <div className="options" key={index}>
-                <span>{item.name}</span>
-              </div>
-            );
-          })}
+          {options
+            .filter(({ name }) => name.indexOf(search.toLowerCase()) > -1)
+            .map((item, index) => {
+              return (
+                <div
+                  onClick={() => updateInput(item.name)}
+                  className="options"
+                  key={index}
+                >
+                  <span>{item.name}</span>
+                </div>
+              );
+            })}
         </div>
       )}
     </div>
