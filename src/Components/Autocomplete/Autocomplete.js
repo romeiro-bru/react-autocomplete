@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./style.css";
 
-const suggestions = ["White", "Black", "Green", "Blue", "Yellow", "Red"];
+const url = "https://swapi.dev/api/people/";
 
 export function Autocomplete() {
-  const [userInput, setUserInput] = useState("");
+  const [search, setSearch] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [options, setOptions] = useState([]);
 
   useEffect(() => {
-    setOptions(suggestions);
+    async function getData() {
+      const response = await axios.get(url);
+      setOptions(response.data.results);
+    }
+    return getData();
   }, []);
 
   const handleInputChange = (e) => {
-    setUserInput(e.target.value);
-    console.log(userInput);
+    setSearch(e.target.value);
   };
 
   const handleSuggestions = () => {
@@ -33,8 +37,8 @@ export function Autocomplete() {
         <div className="autocomplete-container">
           {options.map((item, index) => {
             return (
-              <div className="option" key={index}>
-                <span>{item}</span>
+              <div className="options" key={index}>
+                <span>{item.name}</span>
               </div>
             );
           })}

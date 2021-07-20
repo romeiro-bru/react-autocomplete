@@ -5,6 +5,13 @@
   width: 14rem;
 }
 
+.pos-rel {
+  position: relative;
+}
+.inline-flex {
+  display: inline-flex;
+}
+
 input {
   background: transparent;
   width: 15rem;
@@ -15,10 +22,6 @@ input {
   color: white;
   font-size: 1.2rem;
   outline: none;
-}
-
-.pos-rel {
-  position: relative;
 }
 
 .autocomplete-container {
@@ -35,18 +38,14 @@ input {
   background: #160f24;
 }
 
-.option {
+.options {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 6px;
 }
 
-.option,
+.options,
 span {
   text-transform: capitalize;
-}
-
-.inline-flex {
-  display: inline-flex;
 }
