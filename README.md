@@ -6,7 +6,7 @@
 
 ### Features :unicorn: 
 * Search for the name of a Star Wars character
-* A list of names will be displayed
+* As you type, a list of names will be displayed
 
 ### Technologies :mag_right:
 * React :sparkles:
