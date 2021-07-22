@@ -22,13 +22,17 @@ export function Autocomplete() {
   };
 
   const handleSuggestions = () => {
-    setShowSuggestions(!showSuggestions);
+    setShowSuggestions(true);
   };
 
   const updateInput = (name) => {
     setSearch(name);
     setShowSuggestions(false);
   };
+
+  const filtered = options.filter(
+    ({ name }) => name.indexOf(search.toLowerCase()) > -1
+  );
 
   return (
     <div className="inline-flex pos-rel">
@@ -40,19 +44,18 @@ export function Autocomplete() {
       />
       {showSuggestions && (
         <div className="autocomplete-container">
-          {options
-            .filter(({ name }) => name.indexOf(search.toLowerCase()) > -1)
-            .map((item, index) => {
-              return (
-                <div
-                  onClick={() => updateInput(item.name)}
-                  className="options"
-                  key={index}
-                >
-                  <span>{item.name}</span>
-                </div>
-              );
-            })}
+          {filtered.map((item, index) => {
+            return (
+              <div
+                onClick={() => updateInput(item.name)}
+                className="options"
+                key={index}
+                tabIndex="0"
+              >
+                <span>{item.name}</span>
+              </div>
+            );
+          })}
         </div>
       )}
     </div>

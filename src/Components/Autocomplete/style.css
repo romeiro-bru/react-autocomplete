@@ -26,7 +26,6 @@ input {
 
 .autocomplete-container {
   position: absolute;
-  border: 1.3px solid #f1c95c;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   border-top-color: transparent;
@@ -35,14 +34,13 @@ input {
   top: 52px;
   width: 15.4rem;
   font-weight: lighter;
-  background: #160f24;
+  background: #241c33;
 }
 
 .options {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 6px;
+  padding: 5px;
 }
 
 .options,
@@ -51,7 +49,13 @@ span {
 }
 
 .options:hover {
+  width: 96.1%;
   background: #f1c95c;
   color: #160f24;
   cursor: pointer;
+}
+
+.options:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
