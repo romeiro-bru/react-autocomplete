@@ -5,7 +5,7 @@
 </p>
 
 ### Features 👾 
-* Search for the name of a Star Wars character
+* Search for a Star Wars character
 * As you type, a list of names will be displayed
 
 ### Technologies :mag_right:
