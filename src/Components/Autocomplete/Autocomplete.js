@@ -17,14 +17,6 @@ export function Autocomplete() {
     return getData();
   }, []);
 
-  useEffect(() => {
-    window.addEventListener("mousedown", handleClickOutside);
-  });
-
-  const handleClickOutside = () => {
-    showSuggestions && setShowSuggestions(false);
-  };
-
   const handleInputChange = (e) => {
     setSearch(e.target.value);
   };
