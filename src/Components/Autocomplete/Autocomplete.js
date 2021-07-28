@@ -23,7 +23,7 @@ export function Autocomplete() {
   };
 
   const handleSuggestions = () => {
-    setShowSuggestions(true);
+    setShowSuggestions(!showSuggestions);
   };
 
   const updateInput = (name) => {
@@ -58,7 +58,7 @@ export function Autocomplete() {
   );
 
   return (
-    <div className="inline-flex pos-rel">
+    <section className="inline-flex pos-rel">
       <input
         onChange={handleInputChange}
         onClick={handleSuggestions}
@@ -78,7 +78,6 @@ export function Autocomplete() {
                 onClick={() => updateInput(item.name)}
                 className={`options ${active}`}
                 key={index}
-                tabIndex="0"
               >
                 <span>{item.name}</span>
               </div>
@@ -86,6 +85,6 @@ export function Autocomplete() {
           })}
         </div>
       )}
-    </div>
+    </section>
   );
 }
