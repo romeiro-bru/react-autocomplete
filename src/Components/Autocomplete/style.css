@@ -48,7 +48,8 @@ span {
   text-transform: capitalize;
 }
 
-.options:hover {
+.options:hover,
+.active-suggestion {
   width: 96.1%;
   background: #f1c95c;
   color: #160f24;

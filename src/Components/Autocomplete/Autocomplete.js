@@ -8,6 +8,7 @@ export function Autocomplete() {
   const [search, setSearch] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [options, setOptions] = useState([]);
+  const [indexSuggestion, setIndexSuggestion] = useState(0);
 
   useEffect(() => {
     async function getData() {
@@ -30,6 +31,28 @@ export function Autocomplete() {
     setShowSuggestions(false);
   };
 
+  const handleArrowKey = (e) => {
+    if (e.keyCode === 13) {
+      if (indexSuggestion > 9) {
+        return setIndexSuggestion(0);
+      }
+      setSearch(options[indexSuggestion].name);
+      setIndexSuggestion(0);
+    } else if (e.keyCode === 38 || e.keyCode === 37) {
+      if (indexSuggestion === 0) {
+        return;
+      }
+      setIndexSuggestion(indexSuggestion - 1);
+    } else if (e.keyCode === 40 || e.keyCode === 39) {
+      if (indexSuggestion - 1 === options.length) {
+        return;
+      } else if (indexSuggestion > 9) {
+        return setIndexSuggestion(0);
+      }
+      setIndexSuggestion(indexSuggestion + 1);
+    }
+  };
+
   const filtered = options.filter(
     ({ name }) => name.indexOf(search.toLowerCase()) > -1
   );
@@ -39,16 +62,21 @@ export function Autocomplete() {
       <input
         onChange={handleInputChange}
         onClick={handleSuggestions}
+        onKeyDown={handleArrowKey}
         value={search}
         placeholder=" Type to search"
       />
       {showSuggestions && (
         <div className="autocomplete-container">
           {filtered.map((item, index) => {
+            let active = "";
+            if (index === indexSuggestion) {
+              active = "active-suggestion";
+            }
             return (
               <div
                 onClick={() => updateInput(item.name)}
-                className="options"
+                className={`options ${active}`}
                 key={index}
                 tabIndex="0"
               >
