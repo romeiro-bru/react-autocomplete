@@ -11,6 +11,3 @@
 ### Technologies :mag_right:
 * React :sparkles:
 * Css :nail_care:
-
-
-![Screenshot from 2021-07-29 20-14-40](https://user-images.githubusercontent.com/56081906/128100125-e5c20c28-45e2-4d5b-8e3c-7ccdd30fbccf.png)
