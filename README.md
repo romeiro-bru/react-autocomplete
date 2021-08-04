@@ -9,7 +9,7 @@
 * As you type, a list of names will be displayed
 
 ## Technologies :mag_right:
-* React :sparkles:
+* React :atom:
 * Css :nail_care:
 
 
