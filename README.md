@@ -1,4 +1,4 @@
-## Day Thirteen / Star Wars Autocomplete Input 🌌
+## Star Wars Autocomplete Input / Day Thirteen  🌌
 
 <p  align="center">
 <img  src="https://media.giphy.com/media/K9yzeKyvvva9i/giphy.gif"  height="190" alt="star wars">
@@ -18,13 +18,13 @@
 Prerequisite to run the following commands <strong>[Node.js](https://nodejs.org/en/download/)</strong>, 
                            <strong>[Git](https://git-scm.com/downloads)</strong>, 
                            <strong>[Yarn](https://yarnpkg.com/)</strong>.
-<br><br>
-```git clone https://github.com/romeiro-bru/starwars-autocomplete-input.git```
 <br>
+```
+git clone https://github.com/romeiro-bru/starwars-autocomplete-input.git
+yarn install
+```
 
-```yarn install```
-
-And then run ```yarn start```
+Run in the project directory ```yarn start```
 
 Open ```http://localhost:3000``` in your browser
 
