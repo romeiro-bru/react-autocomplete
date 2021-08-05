@@ -12,6 +12,9 @@
 * React :atom:
 * Css :nail_care:
 
+## Api Reference
+[Star Wars API](https://swapi.dev/documentation) documentation
+
 
 ## Installing / Getting started 👨‍🏭
 
